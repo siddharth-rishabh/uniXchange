@@ -12,7 +12,7 @@ export const verifyFirebaseToken = async (req, res, next) => {
     const idToken = authHeader.split(" ")[1];
     console.log("Verifying token:", idToken.substring(0, 50) + "...");
     const decodedToken = await admin.auth().verifyIdToken(idToken);
-    console.log("Decoded token:", { uid: decodedToken.uid, email: decodedToken.email, project_id: decodedToken.aud });
+    // console.log("Decoded token:", { uid: decodedToken.uid, email: decodedToken.email, process.env.FIREBASE_PROJECT_ID: decodedToken.aud });
 
     const firebaseUid = decodedToken.uid;
     let user = await User.findOne({firebaseUid});
