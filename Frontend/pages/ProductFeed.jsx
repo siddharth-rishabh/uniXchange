@@ -5,7 +5,6 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import axios from "../src/api/axios";
 import ProductCard from "../component/ProductCard";
-import User from "../../Backend/models/User";
 
 function ProductFeed() {
   const { category } = useParams();
@@ -208,7 +207,7 @@ function ProductFeed() {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
                 {products.map((product) => (
                   <Link key={product._id} to={`/product/${product._id}`}>
-                    <ProductCard product={product} user={User}/>
+                    <ProductCard product={product}/>
                   </Link>
                 ))}
               </div>
