@@ -2,7 +2,7 @@ import axios from "axios";
 import { getAuth } from "firebase/auth";
 
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL || "http://localhost:5000",
+  baseURL: import.meta.env.MODE === 'production' ? 'https://unixchange-4yfz.onrender.com' : (import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"),
 });
 
 instance.interceptors.request.use(async (config) => {

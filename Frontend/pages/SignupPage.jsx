@@ -37,7 +37,7 @@ function SignupPage() {
       const token = await firebaseUser.getIdToken();
       localStorage.setItem("token", token);
 
-      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/signup`, {
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/users/signup`, {
         firebaseUid: firebaseUser.uid,
         name,
         email,
