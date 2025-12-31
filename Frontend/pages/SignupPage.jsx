@@ -1,8 +1,8 @@
 import React from "react";
 import { Mail, User, Phone, MapPin, Upload } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../src/Firebase/firebase";
-import axios from "axios";
+import axios from "../src/api/axios";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -37,7 +37,7 @@ function SignupPage() {
       const token = await firebaseUser.getIdToken();
       localStorage.setItem("token", token);
 
-      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/users/signup`, {
+      await axios.post("/api/users/signup", {
         firebaseUid: firebaseUser.uid,
         name,
         email,
@@ -55,7 +55,6 @@ function SignupPage() {
     } finally {
       setLoading(false);
     }
-
   };
 
   return (
@@ -269,9 +268,12 @@ function SignupPage() {
             {/* Login Link */}
             <p className="text-center text-gray-600 mt-6">
               Already have an account?{" "}
-              <a href="#" className="font-bold text-black hover:underline">
+              <Link
+                to="/login"
+                className="font-bold text-black hover:underline"
+              >
                 Log in
-              </a>
+              </Link>
             </p>
           </form>
         </div>

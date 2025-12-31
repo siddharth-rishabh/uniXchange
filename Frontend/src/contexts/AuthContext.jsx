@@ -22,7 +22,7 @@ export const AuthProvider = ({ children }) => {
       try {
         const token = await fbUser.getIdToken(true);
 
-        const res = await axios.get("/users/me", {
+        const res = await axios.get("/api/users/me", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -25,8 +25,8 @@ function ProductFeed() {
         setLoading(true);
         const url =
           category === "all"
-            ? "/products/all"
-            : `/products/category/${category}`;
+            ? "/api/products/all"
+            : `/api/products/category/${category}`;
 
         const res = await axios.get(url, {
           params: {

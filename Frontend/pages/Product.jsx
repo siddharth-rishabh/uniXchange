@@ -25,7 +25,7 @@ function Product() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`/products/${id}`);
+        const res = await axios.get(`/api/products/${id}`);
         setProduct(res.data.data);
       } catch (err) {
         console.error("Failed to fetch product", err);

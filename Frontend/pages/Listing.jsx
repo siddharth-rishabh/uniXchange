@@ -74,7 +74,7 @@ function Listing() {
         data.append("images", img.file);
       });
 
-      const res = await axios.post("/products/list", data);
+      const res = await axios.post("/api/products/list", data);
 
       if (res.data.success) {
         alert("Product listed successfully");

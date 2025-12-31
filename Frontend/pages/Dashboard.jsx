@@ -28,7 +28,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchMyListings = async () => {
       try {
-        const res = await axios.get("/products/user/my-products");
+        const res = await axios.get("/api/products/user/my-products");
         setMyListings(res.data.data || []);
       } catch (err) {
         console.error("Failed to fetch listings", err);
@@ -42,7 +42,7 @@ function Dashboard() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this listing?")) return;
     try {
-      await axios.delete(`/products/${id}`);
+      await axios.delete(`/api/products/${id}`);
       setMyListings((prev) => prev.filter((item) => item._id !== id));
     } catch {
       alert("Failed to delete listing");

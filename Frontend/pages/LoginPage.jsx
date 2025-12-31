@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Mail, Lock, Eye } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../src/Firebase/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -154,12 +154,7 @@ function LoginPage() {
             {/* Sign Up Link */}
             <p className="text-center text-gray-600">
               Don't have an account?{" "}
-              <a
-                href="/signup"
-                className="font-bold text-black hover:text-pink-600 transition-colors"
-              >
-                Sign up
-              </a>
+             <Link to="/signup">Sign up</Link>
             </p>
           </div>
         </div>
