@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Search, SlidersHorizontal, MapPin, Clock, Heart, ChevronDown, ChevronUp } from "lucide-react";
+import {
+  Search,
+  SlidersHorizontal,
+  MapPin,
+  Clock,
+  Heart,
+  ChevronDown,
+  ChevronUp,
+} from "lucide-react";
 import { Link, useParams, useSearchParams } from "react-router-dom";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
@@ -51,27 +59,39 @@ function ProductFeed() {
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-4 md:py-8">
         <div className="flex flex-col md:flex-row gap-4 md:gap-8">
-        
           <div className="w-full md:w-64 shrink-0">
             <div className="border-2 border-black rounded-2xl p-4 md:p-6 md:sticky md:top-8">
-              <h2 className="hidden md:block text-lg md:text-xl font-black text-black mb-4">Categories</h2>
+              <h2 className="hidden md:block text-lg md:text-xl font-black text-black mb-4">
+                Categories
+              </h2>
               <button
                 onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
                 className="w-full flex md:hidden items-center justify-between text-lg md:text-xl font-black text-black mb-4"
               >
                 Categories
-                {isCategoriesOpen ? <ChevronUp className="h-5 w-5" /> : <ChevronDown className="h-5 w-5" />}
+                {isCategoriesOpen ? (
+                  <ChevronUp className="h-5 w-5" />
+                ) : (
+                  <ChevronDown className="h-5 w-5" />
+                )}
               </button>
-              <div className={`space-y-2 ${isCategoriesOpen ? 'block' : 'hidden'} md:block`}>
+              <div
+                className={`space-y-2 ${
+                  isCategoriesOpen ? "block" : "hidden"
+                } md:block`}
+              >
                 {[
                   "all",
-                  "books",
-                  "electronics",
-                  "furniture",
-                  "clothing",
-                  "sports",
-                  "stationery",
-                  "miscellaneous",
+                  "Electronics",
+                  "Books",
+                  "Stationery",
+                  "Clothing",
+                  "Footwear",
+                  "Accessories",
+                  "Sports",
+                  "Snacks",
+                  "Toiletries",
+                  "Miscellaneous",
                 ].map((cat) => (
                   <Link key={cat} to={`/products/${cat}`}>
                     <button
@@ -161,9 +181,7 @@ function ProductFeed() {
             </div>
           </div>
 
-         
           <div className="flex-1">
-          
             <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
               <div>
                 <h2 className="text-xl md:text-2xl font-black text-black capitalize">
@@ -207,7 +225,7 @@ function ProductFeed() {
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
                 {products.map((product) => (
                   <Link key={product._id} to={`/product/${product._id}`}>
-                    <ProductCard product={product}/>
+                    <ProductCard product={product} />
                   </Link>
                 ))}
               </div>
