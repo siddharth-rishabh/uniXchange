@@ -20,8 +20,8 @@ export default function ProductCard({ product}) {
 
 
   return (
-    <div className="border-2 border-gray-200 w-64 rounded-2xl overflow-hidden hover:border-black hover:shadow-lg transition-all cursor-pointer group">
-      <div className="relative bg-gray-200 h-56 ">
+    <div className="border-2 border-gray-200 h-96 w-60 rounded-2xl overflow-hidden hover:border-black hover:shadow-lg transition-all cursor-pointer group">
+      <div className="relative bg-gray-200 h-44 ">
         {images?.[0] && (
           <img
             src={images[0]}

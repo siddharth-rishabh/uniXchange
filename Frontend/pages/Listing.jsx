@@ -180,7 +180,7 @@ function Listing() {
               <option value="stationery">Stationery</option>
               <option value="clothing">Clothing</option>
               <option value="sports">Sports</option>
-              <option value="footware">Footware</option>
+              <option value="footwear">Footwear</option>
               <option value="accessories">Accessories</option>
               <option value="snacks">Snacks</option>
               <option value="toiletries">Toiletries</option>
